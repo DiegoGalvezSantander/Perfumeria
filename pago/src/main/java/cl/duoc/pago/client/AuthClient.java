@@ -1,0 +1,34 @@
+package cl.duoc.pago.client;
+
+import cl.duoc.pago.dto.ApiResponse;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@Component
+public class AuthClient {
+
+    private final WebClient webClient;
+
+
+    @Value("${app.auth.url}")
+    private String authUrl;
+
+    public AuthClient(WebClient.Builder webClientBuilder) {
+        this.webClient = webClientBuilder.build();
+    }
+
+    public void validarToken(String token) {
+        ApiResponse<?> response = webClient.get()
+                .uri(authUrl + "?token=" + token)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<ApiResponse<?>>() {})
+                .block();
+
+
+        if (response == null || response.getCode() != 200) {
+            throw new RuntimeException("Token inválido o expirado");
+        }
+    }
+}
