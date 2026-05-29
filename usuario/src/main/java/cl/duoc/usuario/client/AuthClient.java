@@ -1,7 +1,7 @@
 package cl.duoc.usuario.client;
 
 import cl.duoc.usuario.dto.ApiResponse;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -9,19 +9,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Component
 public class AuthClient {
 
-    private final WebClient webClient;
-
-    @Value("${app.auth.url}")
-    private String authUrl;
-
-    public AuthClient(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.build();
-    }
+    @Autowired
+    private WebClient.Builder webClientBuilder;
 
     public void validarToken(String token) {
         try {
-            ApiResponse<?> response = webClient.get()
-                    .uri(authUrl + "?token=" + token)
+            ApiResponse<?> response = webClientBuilder.build()
+                    .get()
+                    .uri("http://AUTH-SERVICE/api/v1/auth/validate?token=" + token)
                     .retrieve()
                     .bodyToMono(new ParameterizedTypeReference<ApiResponse<?>>() {})
                     .block();
@@ -32,7 +27,7 @@ public class AuthClient {
         } catch (SecurityException se) {
             throw se;
         } catch (Exception e) {
-            throw new SecurityException("Error de red: El servicio de Autenticación (8081) no responde.");
+            throw new SecurityException("Error de red: El servicio de Autenticación no responde.");
         }
     }
 }

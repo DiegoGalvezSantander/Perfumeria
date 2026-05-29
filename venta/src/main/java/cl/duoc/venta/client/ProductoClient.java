@@ -2,7 +2,7 @@ package cl.duoc.venta.client;
 
 import cl.duoc.venta.dto.ApiResponse;
 import cl.duoc.venta.dto.ProductoDTO;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -10,19 +10,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Component
 public class ProductoClient {
 
-    private final WebClient webClient;
-
-    @Value("${app.producto.url}")
-    private String productoUrl;
-
-    public ProductoClient(WebClient.Builder builder) {
-        this.webClient = builder.build();
-    }
+    @Autowired
+    private WebClient.Builder webClientBuilder;
 
     public ProductoDTO obtenerProducto(Long idProducto, String token) {
         try {
-            ApiResponse<ProductoDTO> response = webClient.get()
-                    .uri(productoUrl + "/" + idProducto)
+            ApiResponse<ProductoDTO> response = webClientBuilder.build()
+                    .get()
+                    .uri("http://PRODUCT-SERVICE/api/v1/productos/" + idProducto)
                     .header("Authorization", "Bearer " + token)
                     .retrieve()
                     .bodyToMono(new ParameterizedTypeReference<ApiResponse<ProductoDTO>>() {})
