@@ -17,4 +17,5 @@ public class MovimientoStock {
     private Long idProducto;
 
     private int cantidad;
+    
 }

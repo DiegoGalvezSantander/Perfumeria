@@ -25,4 +25,3 @@ public class Usuario {
     @Column(name = "run_usuario")
     private String runUsuario;
 }
-///

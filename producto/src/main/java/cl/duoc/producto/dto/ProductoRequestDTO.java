@@ -20,4 +20,5 @@ public class ProductoRequestDTO {
 
     @NotBlank(message = "Debe indicar el nombre del tipo de fragancia")
     private String nombreFragancia;
+    
 }

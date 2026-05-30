@@ -7,4 +7,5 @@ public class PagoResponseDTO {
     private Long idPago;
     private String metodoPago;
     private int monto;
+    
 }

@@ -10,4 +10,5 @@ public class Pagorequestdto {
 
     @Min(value = 1, message = "El monto a pagar debe ser mayor a 0")
     private int monto;
+    
 }

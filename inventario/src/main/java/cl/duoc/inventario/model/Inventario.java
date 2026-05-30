@@ -18,4 +18,5 @@ public class Inventario {
 
     @Column(name = "stock_producto")
     private int stockProducto;
+    
 }

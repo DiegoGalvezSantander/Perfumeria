@@ -23,7 +23,7 @@ public class AuthClient {
                 
             return (response != null && response.getCode() == 200) ? response.getData() : null;
         } catch (Exception e) {
-            // Si el servicio Auth está caído o el token es inválido
+            
             return null;
         }
     }

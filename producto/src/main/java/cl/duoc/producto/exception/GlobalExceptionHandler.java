@@ -32,17 +32,18 @@ public class GlobalExceptionHandler {
                 .body(new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), ex.getMessage(), null));
     }
 
-    // NUEVO: Atrapa el error cuando el token es inválido (401 Unauthorized)
+    
     @ExceptionHandler(SecurityException.class)
     public ResponseEntity<ApiResponse<String>> handleSecurityException(SecurityException ex) {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(new ApiResponse<>(HttpStatus.UNAUTHORIZED.value(), ex.getMessage(), null));
     }
 
-    // NUEVO: Atrapa el error cuando se te olvida poner el Authorization en Postman (400 Bad Request)
+    
     @ExceptionHandler(MissingRequestHeaderException.class)
     public ResponseEntity<ApiResponse<String>> handleMissingHeaderException(MissingRequestHeaderException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), "Falta la cabecera de Authorization con el token Bearer", null));
     }
+    
 }

@@ -19,4 +19,5 @@ public class Ventarequestdto {
 
     @NotEmpty(message = "La venta debe contener al menos un producto en los detalles")
     private List<Detalleventarequestdto> detalles;
+    
 }

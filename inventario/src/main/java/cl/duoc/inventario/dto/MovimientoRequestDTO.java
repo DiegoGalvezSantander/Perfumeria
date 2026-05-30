@@ -10,4 +10,5 @@ public class MovimientoRequestDTO {
     private Long idProducto;
     
     private int cantidad;
+    
 }

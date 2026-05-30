@@ -17,7 +17,8 @@ public class PagoService {
         pago.setMetodoPago(dto.getMetodoPago());
         pago.setMonto(dto.getMonto());
         
-        // Guarda en la tabla PAGOS de tu MySQL
+        
         return pagoRepo.save(pago);
     }
+    
 }

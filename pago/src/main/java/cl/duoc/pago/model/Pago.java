@@ -18,4 +18,5 @@ public class Pago {
 
     @Column(name = "monto")
     private int monto;
+    
 }

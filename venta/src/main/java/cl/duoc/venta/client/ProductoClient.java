@@ -35,4 +35,5 @@ public class ProductoClient {
             throw new RuntimeException("Error al conectar con el servicio de Productos: " + e.getMessage());
         }
     }
+    
 }

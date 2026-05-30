@@ -15,7 +15,7 @@ public class AuthClient {
 
     public String validarToken(String token) {
         try {
-            // 2. Usamos el nombre del servicio en Eureka y la ruta exacta de tu AuthController
+            
             ApiResponse<String> response = webClientBuilder.build()
                 .get()
                 .uri("http://AUTH-SERVICE/api/v1/auth/validate?token=" + token)
@@ -29,4 +29,5 @@ public class AuthClient {
             return null;
         }
     }
+    
 }

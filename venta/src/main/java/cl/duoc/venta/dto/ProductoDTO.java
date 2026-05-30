@@ -8,4 +8,5 @@ public class ProductoDTO {
     private String nomProducto;
     private double precio;
     private int stock;
+    
 }

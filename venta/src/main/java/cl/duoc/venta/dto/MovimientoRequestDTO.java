@@ -6,4 +6,5 @@ import lombok.Data;
 public class MovimientoRequestDTO {
     private Long idProducto;
     private int cantidad;
+    
 }

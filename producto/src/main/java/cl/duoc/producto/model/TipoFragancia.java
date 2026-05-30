@@ -14,4 +14,5 @@ public class TipoFragancia {
     private Long idFragancia;
 
     private String nombreFragancia;
+    
 }

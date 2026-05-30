@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface MarcaRepository extends JpaRepository<Marca, Long> {
-    // Método mágico para buscar por nombre
+    
     Optional<Marca> findByNombreMarca(String nombreMarca);
 }

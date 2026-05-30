@@ -41,4 +41,5 @@ public class UsuarioController {
         List<Usuario> usuarios = usuarioService.listarTodos();
         return ResponseEntity.ok(new ApiResponse<>(200, "Usuarios recuperados", usuarios));
     }
+    
 }

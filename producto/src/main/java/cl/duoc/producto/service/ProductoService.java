@@ -27,7 +27,7 @@ public class ProductoService {
 
     public Producto guardarProducto(ProductoRequestDTO dto) {
         
-        // BARRERA DE SEGURIDAD: Validar que el nombre no se repita
+        
         if (productoRepository.existsByNomProductoIgnoreCase(dto.getNomProducto())) {
             throw new IllegalArgumentException("El producto '" + dto.getNomProducto() + "' ya se encuentra registrado en el catálogo.");
         }

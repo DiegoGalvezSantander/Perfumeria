@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class WebClientConfig {
 
     @Bean
-    @LoadBalanced // ¡El toque mágico de Eureka!
+    @LoadBalanced 
     public WebClient.Builder webClientBuilder() {
         return WebClient.builder();
     }

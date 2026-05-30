@@ -20,7 +20,7 @@ public class VentaController {
     private final VentaService ventaService;
     private final AuthClient authClient;
 
-    // 1. Crear una venta nueva
+    
     @PostMapping
     public ResponseEntity<ApiResponse<Venta>> crearVenta(
             @RequestHeader("Authorization") String tokenHeader,
@@ -33,14 +33,14 @@ public class VentaController {
         return ResponseEntity.status(201).body(new ApiResponse<>(201, "Venta Exitosa", nueva));
     }
 
-    // 2. Buscar todas las ventas de un USUARIO específico
+    
     @GetMapping("/usuario/{idUsuario}")
     public ResponseEntity<ApiResponse<List<Venta>>> listarVentasPorUsuario(@PathVariable Long idUsuario) {
         List<Venta> historial = ventaService.obtenerVentasPorUsuario(idUsuario);
         return ResponseEntity.ok(new ApiResponse<>(200, "Historial de ventas recuperado", historial));
     }
 
-    // 3. Buscar una sola venta por el ID de la venta
+    
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<Venta>> obtenerVentaPorId(@PathVariable @NonNull Long id) {
         Venta venta = ventaService.obtenerVentaPorId(id);

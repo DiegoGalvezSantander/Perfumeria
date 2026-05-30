@@ -39,4 +39,5 @@ public class InventarioClient {
                 .bodyToMono(Void.class)
                 .block();
     }
+    
 }

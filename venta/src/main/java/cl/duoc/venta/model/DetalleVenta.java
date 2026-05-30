@@ -37,4 +37,5 @@ public class DetalleVenta {
     @JoinColumn(name = "id_pedido")
     @JsonIgnore
     private Venta venta;
+    
 }

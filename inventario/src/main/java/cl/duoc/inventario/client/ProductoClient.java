@@ -12,11 +12,11 @@ public class ProductoClient {
 
     public void validarProducto(Long idProducto) {
         webClientBuilder.build()
-                .get()
-                // Reemplaza /api/v1/productos/ si tu controlador usa otra ruta base
+                .get()             
                 .uri("http://PRODUCT-SERVICE/api/v1/productos/" + idProducto) 
                 .retrieve()
                 .bodyToMono(Object.class) 
                 .block(); 
     }
+    
 }

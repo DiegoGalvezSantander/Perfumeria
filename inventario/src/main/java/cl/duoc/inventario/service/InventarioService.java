@@ -1,6 +1,6 @@
 package cl.duoc.inventario.service;
 
-import cl.duoc.inventario.client.ProductoClient; // Importamos el nuevo cliente
+import cl.duoc.inventario.client.ProductoClient; 
 import cl.duoc.inventario.dto.MovimientoRequestDTO;
 import cl.duoc.inventario.model.Inventario;
 import cl.duoc.inventario.model.MovimientoStock;
@@ -15,14 +15,14 @@ public class InventarioService {
 
     private final InventarioRepository inventarioRepo;
     private final MovimientoStockRepository movimientoRepo;
-    private final ProductoClient productoClient; // Lo inyectamos aquí
+    private final ProductoClient productoClient; 
 
     public String actualizarStock(MovimientoRequestDTO dto) {
 
-        // 1. BARRERA DE SEGURIDAD: Validar que el producto exista en el microservicio de Productos
+        
         productoClient.validarProducto(dto.getIdProducto());
 
-        // 2. Lógica normal de inventario
+        
         Inventario inv = inventarioRepo.findByIdProducto(dto.getIdProducto())
                 .orElseGet(() -> {
                     Inventario nuevo = new Inventario();

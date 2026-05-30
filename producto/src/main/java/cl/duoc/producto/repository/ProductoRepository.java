@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-    // Verifica si el producto ya existe, sin importar mayúsculas o minúsculas
+    
     boolean existsByNomProductoIgnoreCase(String nomProducto);
 }

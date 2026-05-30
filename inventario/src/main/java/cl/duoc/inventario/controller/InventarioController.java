@@ -23,11 +23,10 @@ public class InventarioController {
             @RequestHeader(value = "X-Internal-Secret", required = false) String internalSecret,
             @Valid @RequestBody MovimientoRequestDTO dto) { 
 
-        // 1. Barrera VIP: Si trae la contraseña interna de microservicios, pasa sin revisar el rol
+        
         if ("clave-secreta-palace-123".equals(internalSecret)) {
-            // Viene de Ventas, confiamos en él
-        } else {
-            // 2. Si no es Ventas, es alguien de afuera. Exigimos Token y rol ADMIN.
+        
+        } else {           
             if (tokenHeader == null || !tokenHeader.startsWith("Bearer ")) {
                 throw new SecurityException("Falta la cabecera de Authorization");
             }
@@ -40,7 +39,7 @@ public class InventarioController {
             }
         }
 
-        // 3. Continuar con la actualización
+        
         String mensaje = inventarioService.actualizarStock(dto);
         return ResponseEntity.ok(new ApiResponse<>(200, "Operación exitosa", mensaje));
     }

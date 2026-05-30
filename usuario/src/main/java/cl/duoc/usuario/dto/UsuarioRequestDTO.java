@@ -17,4 +17,5 @@ public class UsuarioRequestDTO {
 
     @NotBlank(message = "El RUN del usuario es obligatorio")
     private String runUsuario;
+    
 }

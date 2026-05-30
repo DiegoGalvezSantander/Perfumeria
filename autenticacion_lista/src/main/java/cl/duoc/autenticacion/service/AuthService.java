@@ -58,4 +58,5 @@ public class AuthService {
     public boolean validateToken(String token) {
         return jwtUtil.validateToken(token);
     }
+    
 }

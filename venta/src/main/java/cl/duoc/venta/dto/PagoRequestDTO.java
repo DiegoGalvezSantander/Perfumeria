@@ -6,4 +6,5 @@ import lombok.Data;
 public class PagoRequestDTO {
     private String metodoPago;
     private int monto;
+    
 }

@@ -14,4 +14,5 @@ public class Marca {
     private Long idMarca;
 
     private String nombreMarca;
+    
 }

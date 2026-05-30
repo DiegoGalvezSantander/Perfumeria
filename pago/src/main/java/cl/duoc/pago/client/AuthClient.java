@@ -24,4 +24,5 @@ public class AuthClient {
             throw new RuntimeException("Token inválido o expirado");
         }
     }
+    
 }

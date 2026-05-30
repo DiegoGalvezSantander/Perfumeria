@@ -23,12 +23,13 @@ public class PagoController {
             @RequestHeader("Authorization") String tokenHeader, 
             @Valid @RequestBody Pagorequestdto dto) { 
 
-        // 1. Extraemos y validamos el token
+        
         String token = tokenHeader.replace("Bearer ", "");
         authClient.validarToken(token);
 
-        // 2. Si pasa la aduana, procesamos el pago
+        
         Pago resultado = service.procesarPago(dto);
         return ResponseEntity.ok(new ApiResponse<>(200, "Pago exitoso", resultado));
     }
+    
 }

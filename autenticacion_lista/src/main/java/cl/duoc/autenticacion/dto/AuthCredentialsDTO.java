@@ -20,4 +20,5 @@ public class AuthCredentialsDTO {
     private String password;
 
     private String rol;
+    
 }

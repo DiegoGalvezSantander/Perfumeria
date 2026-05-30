@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface TipoFraganciaRepository extends JpaRepository<TipoFragancia, Long> {
-    // Método mágico para buscar por nombre
+    
     Optional<TipoFragancia> findByNombreFragancia(String nombreFragancia);
 }

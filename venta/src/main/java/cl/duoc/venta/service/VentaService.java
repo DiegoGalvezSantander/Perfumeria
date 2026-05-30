@@ -71,4 +71,5 @@ public class VentaService {
     public Venta obtenerVentaPorId(@NonNull Long idVenta) {
         return ventaRepository.findById(idVenta).orElse(null);
     }
+    
 }

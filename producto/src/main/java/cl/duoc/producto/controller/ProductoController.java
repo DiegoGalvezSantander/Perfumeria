@@ -19,12 +19,12 @@ public class ProductoController {
 
     private final ProductoService productoService;
     
-    // CAMBIO 1: Inyectar el cliente de autenticación
+    
     private final AuthClient authClient;
 
     @PostMapping
     public ResponseEntity<ApiResponse<Producto>> crear(
-            // CAMBIO 2: Exigir el header de Authorization
+            
             @RequestHeader("Authorization") String tokenHeader, 
             @Valid @RequestBody ProductoRequestDTO dto) {
 

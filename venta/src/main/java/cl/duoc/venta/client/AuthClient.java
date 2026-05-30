@@ -26,4 +26,5 @@ public class AuthClient {
 
         return response.getData();
     }
+    
 }

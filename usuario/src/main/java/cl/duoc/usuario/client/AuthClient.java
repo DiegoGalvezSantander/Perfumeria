@@ -29,5 +29,6 @@ public class AuthClient {
         } catch (Exception e) {
             throw new SecurityException("Error de red: El servicio de Autenticación no responde.");
         }
+        
     }
 }
