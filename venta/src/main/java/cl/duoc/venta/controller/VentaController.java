@@ -38,14 +38,24 @@ public class VentaController {
 
     
     @GetMapping("/usuario/{idUsuario}")
-    @Operation(summary = "Listar ventas por usuario", description = "Recupera el historial de ventas asociadas a un usuario específico identificado por su ID.")    
-    public ResponseEntity<ApiResponse<List<Venta>>> listarVentasPorUsuario(@PathVariable Long idUsuario) {
+    @Operation(summary = "Listar ventas por usuario", description = "Recupera el historial de ventas asociadas a un usuario específico identificado por su ID. Exclusivo para rol ADMIN.")    
+    public ResponseEntity<ApiResponse<List<Venta>>> listarVentasPorUsuario(
+            @RequestHeader("Authorization") String tokenHeader,
+            @PathVariable Long idUsuario) {
+            
+        String token = tokenHeader.replace("Bearer ", "");
+        String rolUsuario = authClient.validarToken(token);
+        
+        if (rolUsuario == null || !rolUsuario.equals("ADMIN")) {
+             throw new SecurityException("No tienes permisos para ver el historial de este usuario");
+        }
+
         List<Venta> historial = ventaService.obtenerVentasPorUsuario(idUsuario);
         return ResponseEntity.ok(new ApiResponse<>(200, "Historial de ventas recuperado", historial));
     }
 
     
-@GetMapping("/{id}")
+    @GetMapping("/{id}")
     @Operation(summary = "Obtener venta por ID", description = "Recupera los detalles de una venta específica utilizando su ID único. Exclusivo para rol ADMIN.") 
     public ResponseEntity<ApiResponse<Venta>> obtenerVentaPorId(
             @RequestHeader("Authorization") String tokenHeader,
