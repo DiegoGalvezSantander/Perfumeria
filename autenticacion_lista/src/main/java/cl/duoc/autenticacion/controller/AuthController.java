@@ -5,6 +5,7 @@ import cl.duoc.autenticacion.dto.AuthCredentialsDTO;
 import cl.duoc.autenticacion.dto.AuthLoginDTO; 
 import cl.duoc.autenticacion.security.JwtUtil;
 import cl.duoc.autenticacion.service.AuthService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class AuthController {
 
  
     @PostMapping("/register")
+    @Operation(summary = "Registrar un nuevo usuario en su auntenticación", description = "Permite registrar un nuevo usuario con su nombre de usuario, correo electrónico, contraseña y rol.")
     public ResponseEntity<ApiResponse<String>> register(@Valid @RequestBody AuthCredentialsDTO dto) {
         authService.registrar(dto.getUsername(), dto.getEmail(), dto.getPassword(), dto.getRol());
         return ResponseEntity.ok(new ApiResponse<>(200, "Usuario registrado correctamente", "OK"));
@@ -27,6 +29,7 @@ public class AuthController {
 
     
     @PostMapping("/login")
+    @Operation(summary = "Iniciar sesión en su autenticación", description = "Permite a un usuario iniciar sesión proporcionando su nombre de usuario y contraseña. Devuelve un token JWT si las credenciales son válidas.")
     public ResponseEntity<ApiResponse<String>> login(@Valid @RequestBody AuthLoginDTO dto) {
         String token = authService.login(dto.getUsername(), dto.getPassword());
         
@@ -38,6 +41,7 @@ public class AuthController {
 
     
     @GetMapping("/validate")
+    @Operation(summary = "Validar token de autenticación", description = "Permite validar un token JWT proporcionado. Devuelve el rol del usuario si el token es válido.")
     public ResponseEntity<ApiResponse<String>> validateToken(@RequestParam String token) {
         if (authService.validateToken(token)) {
             String rol = jwtUtil.extractRol(token);

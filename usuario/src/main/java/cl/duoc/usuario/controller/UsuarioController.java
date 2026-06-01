@@ -5,6 +5,7 @@ import cl.duoc.usuario.dto.ApiResponse;
 import cl.duoc.usuario.dto.UsuarioRequestDTO;
 import cl.duoc.usuario.model.Usuario;
 import cl.duoc.usuario.service.UsuarioService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid; 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class UsuarioController {
     private final AuthClient authClient;
 
     @PostMapping
+    @Operation(summary = "Crear un nuevo usuario", description = "Crea un nuevo usuario en el sistema. Requiere token de autenticación válido.")
     public ResponseEntity<ApiResponse<Usuario>> crearUsuario(
             @RequestHeader("Authorization") String tokenHeader,
             @Valid @RequestBody UsuarioRequestDTO dto) { 
@@ -32,6 +34,7 @@ public class UsuarioController {
     }
 
     @GetMapping
+    @Operation(summary = "Listar todos los usuarios", description = "Recupera una lista de todos los usuarios registrados en el sistema. Requiere token de autenticación válido.")
     public ResponseEntity<ApiResponse<List<Usuario>>> listarTodos(
             @RequestHeader("Authorization") String tokenHeader) {
 

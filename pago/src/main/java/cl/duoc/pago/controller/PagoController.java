@@ -5,6 +5,7 @@ import cl.duoc.pago.dto.ApiResponse;
 import cl.duoc.pago.dto.Pagorequestdto;
 import cl.duoc.pago.model.Pago;
 import cl.duoc.pago.service.PagoService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid; 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ public class PagoController {
     private final AuthClient authClient; 
 
     @PostMapping("/realizar")
+    @Operation(summary = "Realizar un pago", description = "Permite a los usuarios realizar un pago proporcionando los detalles necesarios.")
     public ResponseEntity<ApiResponse<Pago>> pagar(
             @RequestHeader("Authorization") String tokenHeader, 
             @Valid @RequestBody Pagorequestdto dto) { 

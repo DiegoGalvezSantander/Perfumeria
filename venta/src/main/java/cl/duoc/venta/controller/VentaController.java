@@ -5,6 +5,8 @@ import cl.duoc.venta.dto.ApiResponse;
 import cl.duoc.venta.dto.Ventarequestdto;
 import cl.duoc.venta.model.Venta;
 import cl.duoc.venta.service.VentaService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.models.annotations.OpenAPI30;
 import jakarta.validation.Valid; 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,7 @@ public class VentaController {
 
     
     @PostMapping
+    @Operation(summary = "Crear una nueva venta", description = "Permite crear una nueva venta con los detalles proporcionados en el cuerpo de la solicitud. Requiere un token de autenticación válido en el encabezado.")  
     public ResponseEntity<ApiResponse<Venta>> crearVenta(
             @RequestHeader("Authorization") String tokenHeader,
             @Valid @RequestBody Ventarequestdto dto) { 
@@ -35,14 +38,26 @@ public class VentaController {
 
     
     @GetMapping("/usuario/{idUsuario}")
+    @Operation(summary = "Listar ventas por usuario", description = "Recupera el historial de ventas asociadas a un usuario específico identificado por su ID.")    
     public ResponseEntity<ApiResponse<List<Venta>>> listarVentasPorUsuario(@PathVariable Long idUsuario) {
         List<Venta> historial = ventaService.obtenerVentasPorUsuario(idUsuario);
         return ResponseEntity.ok(new ApiResponse<>(200, "Historial de ventas recuperado", historial));
     }
 
     
-    @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<Venta>> obtenerVentaPorId(@PathVariable @NonNull Long id) {
+@GetMapping("/{id}")
+    @Operation(summary = "Obtener venta por ID", description = "Recupera los detalles de una venta específica utilizando su ID único. Exclusivo para rol ADMIN.") 
+    public ResponseEntity<ApiResponse<Venta>> obtenerVentaPorId(
+            @RequestHeader("Authorization") String tokenHeader,
+            @PathVariable @NonNull Long id) {
+        
+        String token = tokenHeader.replace("Bearer ", "");
+        String rolUsuario = authClient.validarToken(token);
+        
+        if (rolUsuario == null || !rolUsuario.equals("ADMIN")) {
+             throw new SecurityException("No tienes permisos para ver esta venta");
+        }
+        
         Venta venta = ventaService.obtenerVentaPorId(id);
         return ResponseEntity.ok(new ApiResponse<>(200, "Venta encontrada exitosamente", venta));
     }
