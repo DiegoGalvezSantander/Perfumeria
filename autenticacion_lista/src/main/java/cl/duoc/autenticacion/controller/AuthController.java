@@ -8,9 +8,11 @@ import cl.duoc.autenticacion.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j; 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j 
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
@@ -31,6 +33,10 @@ public class AuthController {
     @PostMapping("/login")
     @Operation(summary = "Iniciar sesión en su autenticación", description = "Permite a un usuario iniciar sesión proporcionando su nombre de usuario y contraseña. Devuelve un token JWT si las credenciales son válidas.")
     public ResponseEntity<ApiResponse<String>> login(@Valid @RequestBody AuthLoginDTO dto) {
+        
+        
+        log.info("Validando credenciales de acceso para el usuario: {}", dto.getUsername());
+        
         String token = authService.login(dto.getUsername(), dto.getPassword());
         
         if (token != null) {

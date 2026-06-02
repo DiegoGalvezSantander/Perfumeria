@@ -7,10 +7,11 @@ import cl.duoc.inventario.service.InventarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid; 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j; 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
+@Slf4j 
 @RestController
 @RequestMapping("/api/v1/inventario")
 @RequiredArgsConstructor
@@ -27,6 +28,8 @@ public class InventarioController {
             @Valid @RequestBody MovimientoRequestDTO dto) { 
 
         
+        log.info("Verificando y procesando movimiento de stock en bodega...");
+
         if ("clave-secreta-palace-123".equals(internalSecret)) {
         
         } else {           
@@ -42,7 +45,6 @@ public class InventarioController {
             }
         }
 
-        
         String mensaje = inventarioService.actualizarStock(dto);
         return ResponseEntity.ok(new ApiResponse<>(200, "Operación exitosa", mensaje));
     }

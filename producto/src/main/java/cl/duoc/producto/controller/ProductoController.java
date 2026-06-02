@@ -5,14 +5,16 @@ import cl.duoc.producto.dto.ApiResponse;
 import cl.duoc.producto.dto.ProductoRequestDTO;
 import cl.duoc.producto.model.Producto;
 import cl.duoc.producto.service.ProductoService;
-import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Operation; 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j; 
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@Slf4j 
 @RestController
 @RequestMapping("/api/v1/productos")
 @RequiredArgsConstructor
@@ -30,6 +32,8 @@ public class ProductoController {
             @RequestHeader("Authorization") String tokenHeader, 
             @Valid @RequestBody ProductoRequestDTO dto) {
 
+        
+        log.info("Iniciando creación de un nuevo producto en el catálogo...");
 
         String token = tokenHeader.replace("Bearer ", "");
         

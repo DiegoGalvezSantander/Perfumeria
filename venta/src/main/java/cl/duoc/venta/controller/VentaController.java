@@ -6,14 +6,16 @@ import cl.duoc.venta.dto.Ventarequestdto;
 import cl.duoc.venta.model.Venta;
 import cl.duoc.venta.service.VentaService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.models.annotations.OpenAPI30;
+
 import jakarta.validation.Valid; 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j; 
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@Slf4j 
 @RestController
 @RequestMapping("/api/v1/ventas")
 @RequiredArgsConstructor
@@ -28,6 +30,8 @@ public class VentaController {
     public ResponseEntity<ApiResponse<Venta>> crearVenta(
             @RequestHeader("Authorization") String tokenHeader,
             @Valid @RequestBody Ventarequestdto dto) { 
+
+        log.info("Iniciando orquestación: Creando nueva venta...");
 
         String token = tokenHeader.replace("Bearer ", "");
         authClient.validarToken(token); 
