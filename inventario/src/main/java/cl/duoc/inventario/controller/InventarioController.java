@@ -27,7 +27,6 @@ public class InventarioController {
             @RequestHeader(value = "X-Internal-Secret", required = false) String internalSecret,
             @Valid @RequestBody MovimientoRequestDTO dto) { 
 
-        
         log.info("Verificando y procesando movimiento de stock en bodega...");
 
         if ("clave-secreta-palace-123".equals(internalSecret)) {
@@ -47,5 +46,27 @@ public class InventarioController {
 
         String mensaje = inventarioService.actualizarStock(dto);
         return ResponseEntity.ok(new ApiResponse<>(200, "Operación exitosa", mensaje));
+    }
+
+
+    @GetMapping("/stock/{idProducto}")
+    @Operation(summary = "Consultar stock de un producto", description = "Permite verificar cuántas unidades quedan de un producto en bodega.")
+    public ResponseEntity<ApiResponse<Integer>> consultarStock(
+            @RequestHeader(value = "Authorization", required = false) String tokenHeader,
+            @RequestHeader(value = "X-Internal-Secret", required = false) String internalSecret,
+            @PathVariable Long idProducto) {
+
+        log.info("Consultando stock actual para el producto ID: {}", idProducto);
+
+        if (!"clave-secreta-palace-123".equals(internalSecret)) {
+            if (tokenHeader == null || !tokenHeader.startsWith("Bearer ")) {
+                throw new SecurityException("Falta la cabecera de Authorization");
+            }
+            String token = tokenHeader.replace("Bearer ", "");
+            authClient.validarToken(token); 
+        }
+
+        Integer stockActual = inventarioService.consultarStock(idProducto);
+        return ResponseEntity.ok(new ApiResponse<>(200, "Stock consultado exitosamente", stockActual));
     }
 }

@@ -52,4 +52,38 @@ public class UsuarioController {
         List<Usuario> usuarios = usuarioService.listarTodos();
         return ResponseEntity.ok(new ApiResponse<>(200, "Usuarios recuperados", usuarios));
     }
+
+    
+    @GetMapping("/{id}")
+    @Operation(summary = "Obtener usuario por ID", description = "Recupera los datos de un usuario específico. Requiere rol ADMIN.")
+    public ResponseEntity<ApiResponse<Usuario>> obtenerPorId(
+            @RequestHeader("Authorization") String tokenHeader,
+            @PathVariable Long id) {
+        
+        String token = tokenHeader.replace("Bearer ", "");
+        String rol = authClient.validarToken(token);
+        
+        if (!"ADMIN".equalsIgnoreCase(rol)) {
+            throw new SecurityException("Acceso denegado: Se requiere rol ADMIN para realizar esta acción");
+        }
+        
+        return ResponseEntity.ok(new ApiResponse<>(200, "Usuario encontrado", usuarioService.obtenerPorId(id)));
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Eliminar usuario", description = "Elimina un usuario del sistema. Requiere rol ADMIN.")
+    public ResponseEntity<ApiResponse<String>> eliminarUsuario(
+            @RequestHeader("Authorization") String tokenHeader,
+            @PathVariable Long id) {
+            
+        String token = tokenHeader.replace("Bearer ", "");
+        String rol = authClient.validarToken(token);
+        
+        if (!"ADMIN".equalsIgnoreCase(rol)) {
+            throw new SecurityException("Acceso denegado: Se requiere rol ADMIN para realizar esta acción");
+        }
+        
+        usuarioService.eliminarUsuario(id);
+        return ResponseEntity.ok(new ApiResponse<>(200, "Usuario eliminado correctamente", "OK"));
+    }
 }

@@ -13,30 +13,27 @@ public class Venta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_pedido")
-    private Long idPedido;
+    @Column(name = "id_venta") 
+    private Long idVenta;
 
-    @Column(name = "id_usuario")
+    @Column(name = "id_usuario", nullable = false)
     private Long idUsuario;
 
-    @Column(name = "fecha")
+    @Column(name = "fecha", nullable = false)
     private LocalDate fecha;
 
-    @Column(name = "estado")
+    @Column(name = "estado", nullable = false)
     private String estado;
 
-    @Column(name = "total")
+    @Column(name = "total", nullable = false)
     private double total;
-
 
     @Column(name = "id_pago")
     private Long idPago;
 
-
-    @Column(name = "metodo_pago")
+    @Column(name = "metodo_pago", nullable = false)
     private String metodoPago;
 
     @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleVenta> detalles = new ArrayList<>();
-    
 }

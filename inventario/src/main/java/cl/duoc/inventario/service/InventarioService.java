@@ -19,10 +19,8 @@ public class InventarioService {
 
     public String actualizarStock(MovimientoRequestDTO dto) {
 
-        
         productoClient.validarProducto(dto.getIdProducto());
 
-        
         Inventario inv = inventarioRepo.findByIdProducto(dto.getIdProducto())
                 .orElseGet(() -> {
                     Inventario nuevo = new Inventario();
@@ -49,5 +47,12 @@ public class InventarioService {
         movimientoRepo.save(mov);
 
         return "Stock actualizado. Saldo actual: " + inv.getStockProducto();
+    }
+
+    
+    public Integer consultarStock(Long idProducto) {
+        return inventarioRepo.findByIdProducto(idProducto)
+                .map(Inventario::getStockProducto)
+                .orElse(0); 
     }
 }

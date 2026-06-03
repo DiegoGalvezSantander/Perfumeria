@@ -14,28 +14,20 @@ public class DetalleVenta {
     @Column(name = "id_detalle")
     private Long idDetalle;
 
-
-    @Column(name = "id_producto")
+    @Column(name = "id_producto", nullable = false)
     private Long idProducto;
 
-
-    @Column(name = "cantidad")
+    @Column(name = "cantidad", nullable = false)
     private int cantidad;
 
-
-    @Column(name = "precio_unitario")
+    @Column(name = "precio_unitario", nullable = false)
     private double precioUnitario;
 
-
-    @Column(name = "subtotal")
+    @Column(name = "subtotal", nullable = false)
     private double subtotal;
 
-    @Column(name = "estado_venta")
-    private String estadoVenta;
-
-    @ManyToOne
-    @JoinColumn(name = "id_pedido")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_venta", nullable = false) 
     @JsonIgnore
     private Venta venta;
-    
 }

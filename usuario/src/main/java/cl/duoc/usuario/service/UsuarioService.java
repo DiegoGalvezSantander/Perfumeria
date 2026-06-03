@@ -25,6 +25,17 @@ public class UsuarioService {
 
     public List<Usuario> listarTodos() {
         return usuarioRepository.findAll();
-        
+    }
+
+    
+
+    public Usuario obtenerPorId(Long id) {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado con el ID: " + id));
+    }
+
+    public void eliminarUsuario(Long id) {
+        Usuario user = obtenerPorId(id);
+        usuarioRepository.delete(user);
     }
 }

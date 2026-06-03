@@ -16,9 +16,12 @@ public class PagoService {
         Pago pago = new Pago();
         pago.setMetodoPago(dto.getMetodoPago());
         pago.setMonto(dto.getMonto());
-        
-        
+
         return pagoRepo.save(pago);
     }
-    
+
+    public Pago buscarPorId(Long id) {
+        return pagoRepo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Pago no encontrado con el ID: " + id));
+    }
 }

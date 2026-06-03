@@ -27,7 +27,6 @@ public class ProductoService {
 
     public Producto guardarProducto(ProductoRequestDTO dto) {
         
-        
         if (productoRepository.existsByNomProductoIgnoreCase(dto.getNomProducto())) {
             throw new IllegalArgumentException("El producto '" + dto.getNomProducto() + "' ya se encuentra registrado en el catálogo.");
         }
@@ -50,5 +49,33 @@ public class ProductoService {
 
     public List<Producto> obtenerTodos() {
         return productoRepository.findAll();
+    }
+
+
+    public Producto actualizarProducto(Long id, ProductoRequestDTO dto) {
+        
+        Producto productoExistente = productoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("No se puede actualizar: Producto ID " + id + " no encontrado."));
+
+        Marca marca = marcaRepository.findByNombreMarca(dto.getNombreMarca())
+                .orElseGet(() -> marcaRepository.save(new Marca(null, dto.getNombreMarca())));
+
+        TipoFragancia fragancia = fraganciaRepository.findByNombreFragancia(dto.getNombreFragancia())
+                .orElseGet(() -> fraganciaRepository.save(new TipoFragancia(null, dto.getNombreFragancia())));
+
+        productoExistente.setNomProducto(dto.getNomProducto());
+        productoExistente.setDescripcion(dto.getDescripcion());
+        productoExistente.setPrecio(dto.getPrecio());
+        productoExistente.setMarca(marca);
+        productoExistente.setTipoFragancia(fragancia);
+
+        return productoRepository.save(productoExistente);
+    }
+
+   
+    
+    public void eliminarProducto(Long id) {
+        Producto producto = obtenerPorId(id);
+        productoRepository.delete(producto);
     }
 }
