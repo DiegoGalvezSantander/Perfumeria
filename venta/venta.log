@@ -1,394 +1,139 @@
-2026-06-03T08:33:03.281-04:00  INFO 14504 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Starting VentaApplication using Java 21.0.10 with PID 14504 (C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta\target\classes started by diego in C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta)
-2026-06-03T08:33:03.299-04:00  INFO 14504 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-06-03T08:33:05.905-04:00  INFO 14504 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-03T08:33:06.085-04:00  INFO 14504 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169 ms. Found 2 JPA repository interfaces.
-2026-06-03T08:33:06.496-04:00  INFO 14504 --- [venta-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf6650da-9348-3f25-83ba-e473eab95017
-2026-06-03T08:33:07.289-04:00  WARN 14504 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2026-06-03T08:33:07.296-04:00  WARN 14504 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T08:33:07.301-04:00  WARN 14504 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2026-06-03T08:33:07.305-04:00  WARN 14504 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T08:33:07.318-04:00  WARN 14504 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T08:33:07.778-04:00  INFO 14504 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
-2026-06-03T08:33:07.801-04:00  INFO 14504 --- [venta-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-03T08:33:07.802-04:00  INFO 14504 --- [venta-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2026-06-03T08:33:08.008-04:00  INFO 14504 --- [venta-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-06-03T08:33:08.009-04:00  INFO 14504 --- [venta-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4610 ms
-2026-06-03T08:33:08.622-04:00  INFO 14504 --- [venta-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-06-03T08:33:08.716-04:00  INFO 14504 --- [venta-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-06-03T08:33:08.774-04:00  INFO 14504 --- [venta-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-06-03T08:33:09.140-04:00  INFO 14504 --- [venta-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-03T08:33:09.178-04:00  INFO 14504 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-03T08:33:09.620-04:00  INFO 14504 --- [venta-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64eb14da
-2026-06-03T08:33:09.622-04:00  INFO 14504 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-03T08:33:10.982-04:00  INFO 14504 --- [venta-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-03T08:33:11.055-04:00  INFO 14504 --- [venta-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-03T08:33:12.134-04:00  WARN 14504 --- [venta-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-03T08:33:13.552-04:00  INFO 14504 --- [venta-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-06-03T08:33:13.773-04:00  WARN 14504 --- [venta-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-06-03T08:33:13.787-04:00  INFO 14504 --- [venta-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2026-06-03T08:33:13.916-04:00  INFO 14504 --- [venta-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-06-03T08:33:13.968-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-06-03T08:33:13.985-04:00  INFO 14504 --- [venta-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T08:33:14.023-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-06-03T08:33:14.023-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-06-03T08:33:14.024-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-06-03T08:33:14.024-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-06-03T08:33:14.024-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-06-03T08:33:14.024-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-06-03T08:33:14.024-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-06-03T08:33:14.437-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-06-03T08:33:14.440-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-06-03T08:33:14.445-04:00  INFO 14504 --- [venta-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-06-03T08:33:14.453-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1780489994451 with initial instances count: 5
-2026-06-03T08:33:14.454-04:00  INFO 14504 --- [venta-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VENTA-SERVICE with eureka with status UP
-2026-06-03T08:33:14.454-04:00  INFO 14504 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1780489994454, current=UP, previous=STARTING]
-2026-06-03T08:33:14.466-04:00  INFO 14504 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086: registering service...
-2026-06-03T08:33:14.502-04:00  INFO 14504 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path ''
-2026-06-03T08:33:14.504-04:00  INFO 14504 --- [venta-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
-2026-06-03T08:33:14.533-04:00  INFO 14504 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Started VentaApplication in 11.872 seconds (process running for 12.737)
-2026-06-03T08:33:14.538-04:00  INFO 14504 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086 - registration status: 204
-2026-06-03T08:33:14.722-04:00  INFO 14504 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-03T08:33:14.722-04:00  INFO 14504 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-03T08:33:14.726-04:00  INFO 14504 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-06-03T08:38:14.031-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T08:43:14.033-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T08:48:14.050-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T08:53:14.063-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T08:58:14.067-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:03:14.081-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:08:14.096-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:13:14.098-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:18:14.109-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:23:14.124-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:28:14.141-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:33:14.143-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:38:14.148-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:43:14.150-04:00  INFO 14504 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:46:31.543-04:00  INFO 9052 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Starting VentaApplication using Java 21.0.10 with PID 9052 (C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta\target\classes started by diego in C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta)
-2026-06-03T09:46:31.547-04:00  INFO 9052 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-06-03T09:46:33.278-04:00  INFO 9052 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-03T09:46:33.466-04:00  INFO 9052 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 2 JPA repository interfaces.
-2026-06-03T09:46:33.861-04:00  INFO 9052 --- [venta-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf6650da-9348-3f25-83ba-e473eab95017
-2026-06-03T09:46:34.337-04:00  WARN 9052 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2026-06-03T09:46:34.343-04:00  WARN 9052 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T09:46:34.347-04:00  WARN 9052 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2026-06-03T09:46:34.350-04:00  WARN 9052 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T09:46:34.353-04:00  WARN 9052 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T09:46:34.706-04:00  INFO 9052 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
-2026-06-03T09:46:34.725-04:00  INFO 9052 --- [venta-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-03T09:46:34.726-04:00  INFO 9052 --- [venta-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2026-06-03T09:46:34.824-04:00  INFO 9052 --- [venta-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-06-03T09:46:34.824-04:00  INFO 9052 --- [venta-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3219 ms
-2026-06-03T09:46:35.271-04:00  INFO 9052 --- [venta-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-06-03T09:46:35.359-04:00  INFO 9052 --- [venta-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-06-03T09:46:35.408-04:00  INFO 9052 --- [venta-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-06-03T09:46:35.698-04:00  INFO 9052 --- [venta-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-03T09:46:35.736-04:00  INFO 9052 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-03T09:46:36.203-04:00  INFO 9052 --- [venta-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5392aa2b
-2026-06-03T09:46:36.205-04:00  INFO 9052 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-03T09:46:37.354-04:00  INFO 9052 --- [venta-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-03T09:46:37.672-04:00  WARN 9052 --- [venta-service] [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table venta add column id_venta bigint not null auto_increment" via JDBC [Incorrect table definition; there can be only one auto column and it must be defined as a key]
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table venta add column id_venta bigint not null auto_increment" via JDBC [Incorrect table definition; there can be only one auto column and it must be defined as a key]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
-	at cl.duoc.venta.VentaApplication.main(VentaApplication.java:12) ~[classes/:na]
-Caused by: java.sql.SQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	... 38 common frames omitted
-
-2026-06-03T09:46:37.711-04:00  WARN 9052 --- [venta-service] [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table detalle_venta add constraint FKoknpg31rxsqnjxrsu7iy47p1o foreign key (id_venta) references venta (id_venta)" via JDBC [Failed to add the foreign key constraint. Missing column 'id_venta' for constraint 'FKoknpg31rxsqnjxrsu7iy47p1o' in the referenced table 'venta']
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table detalle_venta add constraint FKoknpg31rxsqnjxrsu7iy47p1o foreign key (id_venta) references venta (id_venta)" via JDBC [Failed to add the foreign key constraint. Missing column 'id_venta' for constraint 'FKoknpg31rxsqnjxrsu7iy47p1o' in the referenced table 'venta']
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:446) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:268) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
-	at cl.duoc.venta.VentaApplication.main(VentaApplication.java:12) ~[classes/:na]
-Caused by: java.sql.SQLException: Failed to add the foreign key constraint. Missing column 'id_venta' for constraint 'FKoknpg31rxsqnjxrsu7iy47p1o' in the referenced table 'venta'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	... 37 common frames omitted
-
-2026-06-03T09:46:37.716-04:00  INFO 9052 --- [venta-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-03T09:46:38.680-04:00  WARN 9052 --- [venta-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-03T09:46:39.973-04:00  INFO 9052 --- [venta-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-06-03T09:46:40.063-04:00  WARN 9052 --- [venta-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-06-03T09:46:40.075-04:00  INFO 9052 --- [venta-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2026-06-03T09:46:40.141-04:00  INFO 9052 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-03T09:46:40.141-04:00  INFO 9052 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-03T09:46:40.142-04:00  INFO 9052 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-06-03T09:46:40.236-04:00  INFO 9052 --- [venta-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-06-03T09:46:40.338-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-06-03T09:46:40.381-04:00  INFO 9052 --- [venta-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T09:46:40.469-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-06-03T09:46:40.469-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-06-03T09:46:40.470-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-06-03T09:46:40.470-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-06-03T09:46:40.470-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-06-03T09:46:40.470-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-06-03T09:46:40.470-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-06-03T09:46:40.795-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-06-03T09:46:40.798-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-06-03T09:46:40.803-04:00  INFO 9052 --- [venta-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-06-03T09:46:40.811-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1780494400809 with initial instances count: 5
-2026-06-03T09:46:40.832-04:00  INFO 9052 --- [venta-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VENTA-SERVICE with eureka with status UP
-2026-06-03T09:46:40.833-04:00  INFO 9052 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1780494400833, current=UP, previous=STARTING]
-2026-06-03T09:46:40.837-04:00  INFO 9052 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086: registering service...
-2026-06-03T09:46:40.865-04:00  INFO 9052 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path ''
-2026-06-03T09:46:40.866-04:00  INFO 9052 --- [venta-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
-2026-06-03T09:46:40.870-04:00  INFO 9052 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086 - registration status: 204
-2026-06-03T09:46:40.876-04:00  INFO 9052 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Started VentaApplication in 9.899 seconds (process running for 10.706)
-2026-06-03T09:48:13.674-04:00  INFO 9052 --- [venta-service] [http-nio-8086-exec-2] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
-2026-06-03T09:48:25.451-04:00  INFO 9052 --- [venta-service] [http-nio-8086-exec-3] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
-2026-06-03T10:09:35.957-04:00  INFO 6432 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Starting VentaApplication using Java 21.0.10 with PID 6432 (C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta\target\classes started by diego in C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta)
-2026-06-03T10:09:35.961-04:00  INFO 6432 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-06-03T10:09:37.674-04:00  INFO 6432 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-03T10:09:37.857-04:00  INFO 6432 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 171 ms. Found 2 JPA repository interfaces.
-2026-06-03T10:09:38.262-04:00  INFO 6432 --- [venta-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf6650da-9348-3f25-83ba-e473eab95017
-2026-06-03T10:09:38.706-04:00  WARN 6432 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2026-06-03T10:09:38.710-04:00  WARN 6432 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T10:09:38.715-04:00  WARN 6432 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2026-06-03T10:09:38.718-04:00  WARN 6432 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T10:09:38.721-04:00  WARN 6432 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2026-06-03T10:09:39.139-04:00  INFO 6432 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
-2026-06-03T10:09:39.154-04:00  INFO 6432 --- [venta-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-03T10:09:39.154-04:00  INFO 6432 --- [venta-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
-2026-06-03T10:09:39.261-04:00  INFO 6432 --- [venta-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-06-03T10:09:39.262-04:00  INFO 6432 --- [venta-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3233 ms
-2026-06-03T10:09:39.726-04:00  INFO 6432 --- [venta-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-06-03T10:09:39.816-04:00  INFO 6432 --- [venta-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-06-03T10:09:39.864-04:00  INFO 6432 --- [venta-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-06-03T10:09:40.287-04:00  INFO 6432 --- [venta-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-03T10:09:40.319-04:00  INFO 6432 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-03T10:09:40.721-04:00  INFO 6432 --- [venta-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@174f0d06
-2026-06-03T10:09:40.724-04:00  INFO 6432 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-03T10:09:41.993-04:00  INFO 6432 --- [venta-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-03T10:09:42.060-04:00  WARN 6432 --- [venta-service] [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table venta add column id_venta bigint not null auto_increment" via JDBC [Incorrect table definition; there can be only one auto column and it must be defined as a key]
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table venta add column id_venta bigint not null auto_increment" via JDBC [Incorrect table definition; there can be only one auto column and it must be defined as a key]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
-	at cl.duoc.venta.VentaApplication.main(VentaApplication.java:12) ~[classes/:na]
-Caused by: java.sql.SQLSyntaxErrorException: Incorrect table definition; there can be only one auto column and it must be defined as a key
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	... 38 common frames omitted
-
-2026-06-03T10:09:42.095-04:00  WARN 6432 --- [venta-service] [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table detalle_venta add constraint FKoknpg31rxsqnjxrsu7iy47p1o foreign key (id_venta) references venta (id_venta)" via JDBC [Failed to add the foreign key constraint. Missing column 'id_venta' for constraint 'FKoknpg31rxsqnjxrsu7iy47p1o' in the referenced table 'venta']
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table detalle_venta add constraint FKoknpg31rxsqnjxrsu7iy47p1o foreign key (id_venta) references venta (id_venta)" via JDBC [Failed to add the foreign key constraint. Missing column 'id_venta' for constraint 'FKoknpg31rxsqnjxrsu7iy47p1o' in the referenced table 'venta']
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:446) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:268) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
-	at cl.duoc.venta.VentaApplication.main(VentaApplication.java:12) ~[classes/:na]
-Caused by: java.sql.SQLException: Failed to add the foreign key constraint. Missing column 'id_venta' for constraint 'FKoknpg31rxsqnjxrsu7iy47p1o' in the referenced table 'venta'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	... 37 common frames omitted
-
-2026-06-03T10:09:42.097-04:00  INFO 6432 --- [venta-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-03T10:09:43.265-04:00  WARN 6432 --- [venta-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-03T10:09:44.582-04:00  INFO 6432 --- [venta-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-06-03T10:09:44.680-04:00  WARN 6432 --- [venta-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-06-03T10:09:44.693-04:00  INFO 6432 --- [venta-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2026-06-03T10:09:45.044-04:00  INFO 6432 --- [venta-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-06-03T10:09:45.112-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-06-03T10:09:45.120-04:00  INFO 6432 --- [venta-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T10:09:45.163-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-06-03T10:09:45.163-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-06-03T10:09:45.164-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-06-03T10:09:45.164-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-06-03T10:09:45.164-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-06-03T10:09:45.164-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-06-03T10:09:45.164-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-06-03T10:09:45.606-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-06-03T10:09:45.611-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-06-03T10:09:45.614-04:00  INFO 6432 --- [venta-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-06-03T10:09:45.621-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1780495785620 with initial instances count: 5
-2026-06-03T10:09:45.628-04:00  INFO 6432 --- [venta-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VENTA-SERVICE with eureka with status UP
-2026-06-03T10:09:45.630-04:00  INFO 6432 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1780495785630, current=UP, previous=STARTING]
-2026-06-03T10:09:45.635-04:00  INFO 6432 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086: registering service...
-2026-06-03T10:09:45.668-04:00  INFO 6432 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path ''
-2026-06-03T10:09:45.669-04:00  INFO 6432 --- [venta-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
-2026-06-03T10:09:45.697-04:00  INFO 6432 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086 - registration status: 204
-2026-06-03T10:09:45.704-04:00  INFO 6432 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Started VentaApplication in 10.298 seconds (process running for 11.312)
-2026-06-03T10:09:47.433-04:00  INFO 6432 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-03T10:09:47.433-04:00  INFO 6432 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-03T10:09:47.433-04:00  INFO 6432 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-06-03T10:14:45.171-04:00  INFO 6432 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T10:18:21.161-04:00  INFO 6432 --- [venta-service] [http-nio-8086-exec-4] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
-2026-06-03T10:18:30.667-04:00  WARN 6432 --- [venta-service] [http-nio-8086-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present]
-2026-06-03T10:18:34.985-04:00  INFO 6432 --- [venta-service] [http-nio-8086-exec-2] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
-2026-06-03T10:19:45.190-04:00  INFO 6432 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-06-03T10:20:56.584-04:00  WARN 6432 --- [venta-service] [http-nio-8086-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1054, SQLState: 42S22
-2026-06-03T10:20:56.587-04:00 ERROR 6432 --- [venta-service] [http-nio-8086-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown column 'v1_0.id_venta' in 'field list'
-2026-06-03T10:21:06.443-04:00  WARN 6432 --- [venta-service] [http-nio-8086-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1054, SQLState: 42S22
-2026-06-03T10:21:06.443-04:00 ERROR 6432 --- [venta-service] [http-nio-8086-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown column 'v1_0.id_venta' in 'field list'
-2026-06-03T10:21:15.583-04:00  WARN 6432 --- [venta-service] [http-nio-8086-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1054, SQLState: 42S22
-2026-06-03T10:21:15.584-04:00 ERROR 6432 --- [venta-service] [http-nio-8086-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown column 'v1_0.id_venta' in 'field list'
-2026-06-03T10:23:18.856-04:00  WARN 6432 --- [venta-service] [http-nio-8086-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1054, SQLState: 42S22
-2026-06-03T10:23:18.857-04:00 ERROR 6432 --- [venta-service] [http-nio-8086-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown column 'v1_0.id_venta' in 'field list'
-2026-06-03T10:23:26.774-04:00  WARN 6432 --- [venta-service] [http-nio-8086-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1054, SQLState: 42S22
-2026-06-03T10:23:26.774-04:00 ERROR 6432 --- [venta-service] [http-nio-8086-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown column 'v1_0.id_venta' in 'field list'
-2026-06-03T10:24:45.193-04:00  INFO 6432 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T10:50:22.087-04:00  INFO 12688 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Starting VentaApplication using Java 21.0.10 with PID 12688 (C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta\target\classes started by diego in C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta)
+2026-06-07T10:50:22.100-04:00  INFO 12688 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-06-07T10:50:23.908-04:00  INFO 12688 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-07T10:50:24.149-04:00  INFO 12688 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 231 ms. Found 2 JPA repository interfaces.
+2026-06-07T10:50:24.488-04:00  INFO 12688 --- [venta-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0d9a497b-b328-3165-98da-cf237b403392
+2026-06-07T10:50:24.989-04:00  WARN 12688 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-06-07T10:50:24.989-04:00  WARN 12688 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-06-07T10:50:24.989-04:00  WARN 12688 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-06-07T10:50:25.005-04:00  WARN 12688 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-06-07T10:50:25.005-04:00  WARN 12688 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-06-07T10:50:25.413-04:00  INFO 12688 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2026-06-07T10:50:25.441-04:00  INFO 12688 --- [venta-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-07T10:50:25.442-04:00  INFO 12688 --- [venta-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-06-07T10:50:25.630-04:00  INFO 12688 --- [venta-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-07T10:50:25.634-04:00  INFO 12688 --- [venta-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3454 ms
+2026-06-07T10:50:26.257-04:00  INFO 12688 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-07T10:50:26.790-04:00  INFO 12688 --- [venta-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1dcad16f
+2026-06-07T10:50:26.793-04:00  INFO 12688 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-07T10:50:26.954-04:00  INFO 12688 --- [venta-service] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2026-06-07T10:50:26.954-04:00  INFO 12688 --- [venta-service] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2026-06-07T10:50:26.956-04:00  INFO 12688 --- [venta-service] [main] o.f.c.internal.license.VersionPrinter    : 
+2026-06-07T10:50:26.986-04:00  INFO 12688 --- [venta-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/db_ventas (MySQL 8.4)
+2026-06-07T10:50:26.997-04:00  WARN 12688 --- [venta-service] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.0.
+2026-06-07T10:50:27.047-04:00  INFO 12688 --- [venta-service] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `db_ventas`.`flyway_schema_history` does not exist yet
+2026-06-07T10:50:27.051-04:00  INFO 12688 --- [venta-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.038s)
+2026-06-07T10:50:27.074-04:00  INFO 12688 --- [venta-service] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `db_ventas`.`flyway_schema_history` ...
+2026-06-07T10:50:27.673-04:00  INFO 12688 --- [venta-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `db_ventas`: << Empty Schema >>
+2026-06-07T10:50:27.675-04:00  INFO 12688 --- [venta-service] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `db_ventas` to version "1 - crear tablas"
+2026-06-07T10:50:28.542-04:00  INFO 12688 --- [venta-service] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema `db_ventas`, now at version v1 (execution time 00:00.790s)
+2026-06-07T10:50:28.681-04:00  INFO 12688 --- [venta-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-07T10:50:28.817-04:00  INFO 12688 --- [venta-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-07T10:50:28.869-04:00  INFO 12688 --- [venta-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-07T10:50:29.199-04:00  INFO 12688 --- [venta-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-07T10:50:29.282-04:00  WARN 12688 --- [venta-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-07T10:50:30.377-04:00  INFO 12688 --- [venta-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-07T10:50:30.377-04:00  INFO 12688 --- [venta-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-07T10:50:31.556-04:00  WARN 12688 --- [venta-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-07T10:50:33.190-04:00  INFO 12688 --- [venta-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-07T10:50:33.289-04:00  WARN 12688 --- [venta-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-07T10:50:33.304-04:00  INFO 12688 --- [venta-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-07T10:50:33.491-04:00  INFO 12688 --- [venta-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-07T10:50:33.581-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-07T10:50:33.591-04:00  INFO 12688 --- [venta-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T10:50:33.599-04:00  INFO 12688 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-07T10:50:33.600-04:00  INFO 12688 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-07T10:50:33.604-04:00  INFO 12688 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-07T10:50:33.654-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-07T10:50:34.409-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-07T10:50:34.414-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-07T10:50:34.418-04:00  INFO 12688 --- [venta-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-07T10:50:34.423-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1780843834422 with initial instances count: 5
+2026-06-07T10:50:34.434-04:00  INFO 12688 --- [venta-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VENTA-SERVICE with eureka with status UP
+2026-06-07T10:50:34.435-04:00  INFO 12688 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1780843834435, current=UP, previous=STARTING]
+2026-06-07T10:50:34.438-04:00  INFO 12688 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086: registering service...
+2026-06-07T10:50:34.469-04:00  INFO 12688 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path ''
+2026-06-07T10:50:34.471-04:00  INFO 12688 --- [venta-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
+2026-06-07T10:50:34.476-04:00  INFO 12688 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086 - registration status: 204
+2026-06-07T10:50:34.482-04:00  INFO 12688 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Started VentaApplication in 13.02 seconds (process running for 13.997)
+2026-06-07T10:55:33.679-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T10:58:01.941-04:00  INFO 12688 --- [venta-service] [http-nio-8086-exec-2] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
+2026-06-07T10:58:48.257-04:00  INFO 12688 --- [venta-service] [http-nio-8086-exec-3] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
+2026-06-07T10:58:50.452-04:00  INFO 12688 --- [venta-service] [http-nio-8086-exec-6] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
+2026-06-07T10:59:33.187-04:00  INFO 12688 --- [venta-service] [http-nio-8086-exec-7] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
+2026-06-07T11:00:33.691-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:05:33.700-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:10:33.718-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:15:33.730-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:20:33.734-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:25:33.747-04:00  INFO 12688 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:30:08.553-04:00  INFO 2380 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Starting VentaApplication using Java 21.0.10 with PID 2380 (C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta\target\classes started by diego in C:\Users\diego\OneDrive\Escritorio\Perfumeria-DiegoGalvezSantander-eureka\venta)
+2026-06-07T11:30:08.557-04:00  INFO 2380 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-06-07T11:30:10.243-04:00  INFO 2380 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-07T11:30:10.404-04:00  INFO 2380 --- [venta-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 2 JPA repository interfaces.
+2026-06-07T11:30:10.768-04:00  INFO 2380 --- [venta-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0d9a497b-b328-3165-98da-cf237b403392
+2026-06-07T11:30:11.217-04:00  WARN 2380 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-06-07T11:30:11.220-04:00  WARN 2380 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-06-07T11:30:11.226-04:00  WARN 2380 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-06-07T11:30:11.229-04:00  WARN 2380 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-06-07T11:30:11.232-04:00  WARN 2380 --- [venta-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-06-07T11:30:11.592-04:00  INFO 2380 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2026-06-07T11:30:11.611-04:00  INFO 2380 --- [venta-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-07T11:30:11.611-04:00  INFO 2380 --- [venta-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-06-07T11:30:11.759-04:00  INFO 2380 --- [venta-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-07T11:30:11.760-04:00  INFO 2380 --- [venta-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3143 ms
+2026-06-07T11:30:12.141-04:00  INFO 2380 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-07T11:30:12.582-04:00  INFO 2380 --- [venta-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@570299e3
+2026-06-07T11:30:12.583-04:00  INFO 2380 --- [venta-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-07T11:30:12.717-04:00  INFO 2380 --- [venta-service] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2026-06-07T11:30:12.717-04:00  INFO 2380 --- [venta-service] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2026-06-07T11:30:12.717-04:00  INFO 2380 --- [venta-service] [main] o.f.c.internal.license.VersionPrinter    : 
+2026-06-07T11:30:12.748-04:00  INFO 2380 --- [venta-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/db_ventas (MySQL 8.4)
+2026-06-07T11:30:12.759-04:00  WARN 2380 --- [venta-service] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.0.
+2026-06-07T11:30:12.836-04:00  INFO 2380 --- [venta-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.060s)
+2026-06-07T11:30:12.856-04:00  INFO 2380 --- [venta-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `db_ventas`: 1
+2026-06-07T11:30:12.859-04:00  INFO 2380 --- [venta-service] [main] o.f.core.internal.command.DbMigrate      : Schema `db_ventas` is up to date. No migration necessary.
+2026-06-07T11:30:12.993-04:00  INFO 2380 --- [venta-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-07T11:30:13.094-04:00  INFO 2380 --- [venta-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-07T11:30:13.150-04:00  INFO 2380 --- [venta-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-07T11:30:13.420-04:00  INFO 2380 --- [venta-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-07T11:30:13.498-04:00  WARN 2380 --- [venta-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-07T11:30:14.593-04:00  INFO 2380 --- [venta-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-07T11:30:14.598-04:00  INFO 2380 --- [venta-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-07T11:30:15.626-04:00  WARN 2380 --- [venta-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-07T11:30:16.833-04:00  INFO 2380 --- [venta-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-06-07T11:30:16.905-04:00  WARN 2380 --- [venta-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-07T11:30:16.915-04:00  INFO 2380 --- [venta-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-07T11:30:17.074-04:00  INFO 2380 --- [venta-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-07T11:30:17.143-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-07T11:30:17.153-04:00  INFO 2380 --- [venta-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:30:17.183-04:00  INFO 2380 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-07T11:30:17.184-04:00  INFO 2380 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-07T11:30:17.186-04:00  INFO 2380 --- [venta-service] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-07T11:30:17.200-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-07T11:30:17.201-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-07T11:30:17.202-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-07T11:30:17.202-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-07T11:30:17.202-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-07T11:30:17.204-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-07T11:30:17.204-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-07T11:30:17.696-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-07T11:30:17.704-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-07T11:30:17.708-04:00  INFO 2380 --- [venta-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-07T11:30:17.718-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1780846217714 with initial instances count: 4
+2026-06-07T11:30:17.725-04:00  INFO 2380 --- [venta-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application VENTA-SERVICE with eureka with status UP
+2026-06-07T11:30:17.727-04:00  INFO 2380 --- [venta-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1780846217727, current=UP, previous=STARTING]
+2026-06-07T11:30:17.729-04:00  INFO 2380 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086: registering service...
+2026-06-07T11:30:17.763-04:00  INFO 2380 --- [venta-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path ''
+2026-06-07T11:30:17.764-04:00  INFO 2380 --- [venta-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8086
+2026-06-07T11:30:17.771-04:00  INFO 2380 --- [venta-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_VENTA-SERVICE/Diego:venta-service:8086 - registration status: 204
+2026-06-07T11:30:17.776-04:00  INFO 2380 --- [venta-service] [main] cl.duoc.venta.VentaApplication           : Started VentaApplication in 9.765 seconds (process running for 10.557)
+2026-06-07T11:33:18.147-04:00  INFO 2380 --- [venta-service] [http-nio-8086-exec-1] c.duoc.venta.controller.VentaController  : Iniciando orquestación: Creando nueva venta...
+2026-06-07T11:35:17.215-04:00  INFO 2380 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-07T11:40:17.226-04:00  INFO 2380 --- [venta-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
